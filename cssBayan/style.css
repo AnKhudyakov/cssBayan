@@ -11,14 +11,38 @@
 
 .container .img_wrapper {
   width: 100%;
-  height: 0;
+  max-height: 0;
   margin: 0 auto;
   overflow: hidden;
+  transition: all 2s ease;
 }
 
-.img_wrapper img{
+.container {
+  position: relative;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  width: 30px;
+}
+
+.img_wrapper img {
+  display: block;
   margin: 0 auto;
   max-width: 50%;
+  scale: 1;
+  transition: all 1s ease;
+}
+
+.img_wrapper img:hover {
+  scale: 1.1;
 }
 
 .checkbox {
@@ -34,14 +58,27 @@
   width: 100%;
   padding: 2% 0;
   cursor: pointer;
-  font-size:medium;
+  font-size: medium;
   font-weight: 600;
 }
 
-.checkbox:hover ~ .checkbox__label ~ .img_wrapper {
-  height: auto;
+.checkbox:hover ~ .img_wrapper {
+  max-height: 50rem;
 }
 
-.checkbox:checked ~ .checkbox__label ~ .img_wrapper {
-  height: auto;
+.checkbox:checked ~ .img_wrapper {
+  max-height: 50rem;
+}
+.checkbox:checked ~ .icon {
+  transition: transform 0.15s;
+  transform: rotate(45deg);
+}
+
+.wrapper:hover {
+  color: cornflowerblue;
+}
+
+.wrapper:hover .icon {
+  background: url(./assets/plus.svg);
+  background-repeat: no-repeat;
 }
