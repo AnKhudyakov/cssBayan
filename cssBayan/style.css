@@ -65,7 +65,7 @@
 }
 
 .radio:hover ~ .img_wrapper,.radio:checked ~ .img_wrapper {
-  max-height: 500px;
+  max-height: 1000px;
 }
 
 .radio:checked ~ .icon,.radio:hover ~ .icon {
