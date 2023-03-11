@@ -24,7 +24,6 @@
 
 .wrapper {
   margin: 0 auto;
-  cursor: pointer;
 }
 
 .icon {
@@ -43,10 +42,6 @@
   transition: all 1s ease;
 }
 
-.img_wrapper img:hover {
-  scale: 1.05;
-}
-
 .radio {
   display: none;
 }
@@ -59,27 +54,19 @@
   display: block;
   width: 100%;
   padding: 2% 0;
-  cursor: pointer;
   font-size: 14px;
   font-weight: 600;
 }
 
-.radio:hover ~ .img_wrapper,.radio:checked ~ .img_wrapper {
-  max-height: 1000px;
-}
-
-.radio:checked ~ .icon,.radio:hover ~ .icon {
+.radio:checked ~ .icon {
+  background: url(./assets/plus.svg);
+  background-repeat: no-repeat;
   transition: transform 0.15s;
   transform: rotate(45deg);
 }
 
-.wrapper:hover {
-  color: cornflowerblue;
-}
-
-.wrapper:hover .icon {
-  background: url(./assets/plus.svg);
-  background-repeat: no-repeat;
+.radio:checked ~ .img_wrapper {
+  max-height: 1000px;
 }
 
 /* For tablets: */
@@ -94,9 +81,41 @@
 
 /* For desktop: */
 @media only screen and (min-width: 820px) {
+  .wrapper {
+    cursor: pointer;
+  }
+  .radio__label {
+    cursor: pointer;
+  }
+
+  .radio:hover ~ .icon {
+    background: url(./assets/plus.svg);
+    background-repeat: no-repeat;
+    transition: transform 0.15s;
+    transform: rotate(45deg);
+  }
+
+  .radio:hover ~ .img_wrapper {
+    max-height: 1000px;
+  }
+
+  .wrapper:hover .icon {
+    background: url(./assets/plus.svg);
+    background-repeat: no-repeat;
+  }
+
+  .wrapper:hover {
+    color: cornflowerblue;
+  }
+
+  .img_wrapper img:hover {
+    scale: 1.05;
+  }
+
   .main {
     font-size: 24px;
   }
+
   .radio__label {
     font-size: 18px;
   }
