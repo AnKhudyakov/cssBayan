@@ -1,0 +1,122 @@
+/* General styles*/
+
+.main {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 10%;
+  font-size: 18px;
+  background-color: bisque;
+  overflow: scroll;
+}
+
+.container .img_wrapper {
+  width: 100%;
+  max-height: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: all 2s ease;
+}
+
+.container {
+  position: relative;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  width: 30px;
+}
+
+.img_wrapper img {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
+  scale: 1;
+  transition: all 1s ease;
+}
+
+.radio {
+  display: none;
+}
+
+.divider {
+  color: black;
+}
+
+.radio__label {
+  display: block;
+  width: 100%;
+  padding: 2% 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.radio:checked ~ .icon {
+  background: url(./assets/plus.svg);
+  background-repeat: no-repeat;
+  transition: transform 0.15s;
+  transform: rotate(45deg);
+}
+
+.radio:checked ~ .img_wrapper {
+  max-height: 1000px;
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+  .main {
+    font-size: 20px;
+  }
+  .radio__label {
+    font-size: 16px;
+  }
+}
+
+/* For desktop: */
+@media only screen and (min-width: 820px) {
+  .wrapper {
+    cursor: pointer;
+  }
+  .radio__label {
+    cursor: pointer;
+  }
+
+  .radio:hover ~ .icon {
+    background: url(./assets/plus.svg);
+    background-repeat: no-repeat;
+    transition: transform 0.15s;
+    transform: rotate(45deg);
+  }
+
+  .radio:hover ~ .img_wrapper {
+    max-height: 1000px;
+  }
+
+  .wrapper:hover .icon {
+    background: url(./assets/plus.svg);
+    background-repeat: no-repeat;
+  }
+
+  .wrapper:hover {
+    color: cornflowerblue;
+  }
+
+  .img_wrapper img:hover {
+    scale: 1.05;
+  }
+
+  .main {
+    font-size: 24px;
+  }
+
+  .radio__label {
+    font-size: 18px;
+  }
+}
