@@ -5,6 +5,7 @@
   height: 100vh;
   margin: 0 auto;
   padding: 10%;
+  font-size: 18px;
   background-color: bisque;
   overflow: scroll;
 }
@@ -23,6 +24,7 @@
 
 .wrapper {
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .icon {
@@ -42,7 +44,7 @@
 }
 
 .img_wrapper img:hover {
-  scale: 1.1;
+  scale: 1.05;
 }
 
 .checkbox {
@@ -58,16 +60,16 @@
   width: 100%;
   padding: 2% 0;
   cursor: pointer;
-  font-size: medium;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .checkbox:hover ~ .img_wrapper {
-  max-height: 50rem;
+  max-height: 500px;
 }
 
 .checkbox:checked ~ .img_wrapper {
-  max-height: 50rem;
+  max-height: 500px;
 }
 .checkbox:checked ~ .icon {
   transition: transform 0.15s;
@@ -81,4 +83,26 @@
 .wrapper:hover .icon {
   background: url(./assets/plus.svg);
   background-repeat: no-repeat;
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+  .main {
+    font-size: 20px;
+  }
+  .checkbox__label {
+    font-size: 16px;
+    
+  }
+}
+
+/* For desktop: */
+@media only screen and (min-width: 820px) {
+  .main {
+    font-size: 24px;
+  }
+  .checkbox__label {
+    font-size: 18px;
+    
+  }
 }
